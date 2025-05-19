@@ -1,0 +1,169 @@
+{%extends 'main/base_otz.html' %}
+
+{%load static%}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style_otz.css' %}">
+
+{% endblock %}
+
+{% block title %}
+Курсор
+{% endblock %}
+
+{% block content %}
+
+    <div class="container_1">
+
+
+    <div class="container col-12 mb-5">
+        <div class="row">
+            <div class="col-xl-10 col-lg-10 col-md-11 col-sm-11 col-12 fs-3 text-center mt-3 mx-auto">
+                Спасибо за ваш отзыв! Он поможет абитуриентам найти свой путь в образовании.
+            </div>
+            <div class="col-xl-10 col-lg-10 col-md-11 col-sm-11 col-12 fs-3 text-center mt-3 mx-auto">
+                <a class=" me-3 text-center" href="{% url 'home' %}">Вернуться на главную страницу</a>
+            </div>
+        </div>
+
+
+
+
+<!--&lt;!&ndash;        <div class="row mt-3 mx-auto d-flex justify-content-center">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-xl-12 fs-6 fw-light">&ndash;&gt;-->
+<!--&lt;!&ndash;                        Факультет&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="row mt-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <input class="search-form__input" type="text" placeholder="Введите название факультета">&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--&lt;!&ndash;                <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-xl-12 fs-6 fw-light">&ndash;&gt;-->
+<!--&lt;!&ndash;                        Учёба&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                <div class="row mt-3 grow_grow">-->
+<!--                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place_2">-->
+<!--                        <textarea  class="search-form__input_2" type="text" placeholder="Как бы Вы оценили обучение на Вашем факультете?"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-12 fs-6 fw-light">-->
+<!--                        Преподаватели-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row mt-3 grow_grow">-->
+<!--                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place_3">-->
+<!--                        <textarea  class="search-form__input_3" type="text" placeholder="Как бы Вы оценили преподавательский состав вашей кафедры и факультета/института в целом?"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-12 fs-6 fw-light">-->
+<!--                        Отзыв-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+
+
+
+
+
+
+
+
+
+<!--                            <div class="input">-->
+<!--                                <textarea  class="search-form__input" type="text" placeholder="Напишите сюда что-нибудь"name="inputText"></textarea>-->
+<!--                                <button class="btn" type="submit">Отправить отзыв</button>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                        </div>-->
+
+<!--                        {% if request.method == 'POST' and not request.POST.inputText %}-->
+<!--                            <p class="error">Пожалуйста, введите текст для обработки.</p>-->
+<!--                        {% elif request.method == 'POST' %}-->
+<!--                            <div class="result-frame">-->
+<!--&lt;!&ndash;                                <h2>Отзыв добавлен в бд</h2>&ndash;&gt;-->
+<!--                                <h2>Результат анализа нейросети:</h2>-->
+<!--                                <p>Введенный текст: <strong>{{ request.POST.inputText }}</strong></p>-->
+<!--                                <p>Результат: {{ result }}</p>-->
+<!--                            </div>-->
+<!--                        {% endif %}-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+
+
+
+
+
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-12 fs-6 fw-light">-->
+<!--                        Расположение-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row mt-3 grow_grow">-->
+<!--                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place_5">-->
+<!--                        <textarea  class="search-form__input_5" type="text" placeholder="Как Вы оцениваете расположение вашего вуза?"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-12 fs-6 fw-light">-->
+<!--                        Общежитие-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row mt-3 grow_grow">-->
+<!--                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place_5">-->
+<!--                        <textarea  class="search-form__input_5" type="text" placeholder="Как бы Вы оценили общежитие?"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+  $('textarea').each(function () {
+    // Do something if you want
+  }).on('input', function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+  });
+</script>
+        </div>
+
+{% endblock %}
+  
+  
+
+  

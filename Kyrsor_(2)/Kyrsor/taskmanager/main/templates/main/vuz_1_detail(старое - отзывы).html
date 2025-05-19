@@ -1,0 +1,141 @@
+{%extends 'main/base.html' %}
+
+{%load static%}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style_vuz.css' %}">
+{% endblock %}
+
+{% block title %}
+Сайт для абитуриентов
+{% endblock %}
+
+{% block content %}
+
+<section class="img_vuz">
+
+
+    <div class="container col-12 mb-5">
+
+<!--        <div class="row d-flex justify-content-between spacing_vuz fs-6 fw-bolder text-center">-->
+<!--             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 clouds py-2">-->
+<!--                 Образовательных программ {{ vuz_1.obr_pr}}-->
+<!--             </div>-->
+<!--        </div>-->
+<!--        <div class="row d-flex justify-content-center spacing_vuz fs-6 fw-bolder text-center">-->
+<!--               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 clouds me-5 py-2">-->
+<!--                 Минимальный проходной балл {{ vuz_1.pr_b}}-->
+<!--               </div>-->
+
+<!--        </div>-->
+        <div class="row d-flex justify-content-center spacing_vuz fs-5 fw-bolder text-center">
+            <div class="col-xl-5 col-lg-5 col-md-6 col-sm-6 col-12 clouds py-2">
+                 {{ vuz_1.name}}
+
+            </div>
+        </div>
+<!--            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=1378cdde-b790-4327-9442-39ce536a4341" ></script>-->
+<!--            <script src="main/js/scripts.js"></script>-->
+
+        <div class="row spacing_vuz clouds fs-5 fw-bold">
+
+            <div class="col-xl-12 px-4 py-3">
+              <div class="row">
+                   <div class="col-xl-2 fs-5">
+                       Ключевые слова
+                   </div>
+                   <div class="col-xl-4">
+                        <div class="row text-center">
+                            <div class="col-xl-3 px-1 study">
+                                Учёба
+                            </div>
+                            <div class="col-xl-8  stud_life ms-1">
+                                Студенческая жизнь
+                            </div>
+                            <div class="col-xl-6 px-1 mt-1 prepod">
+                                Преподаватели
+                            </div>
+                            <div class="col-xl-5 px-1 mt-1 ms-1 living">
+                                Общежитие
+                            </div>
+                            <div class="col-xl-6 px-1 mt-1 location">
+                                Расположение
+                            </div>
+                        </div>
+                   </div>
+                   <div class="col-xl-2 ">
+                       <div class="row text-center">
+                           <div class="col-xl-12 px-1">
+                               Дата добавления
+                           </div>
+                           <div class="col-xl-12 px-1 mt-1 by_new">
+                               По новизне
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-xl-2 text-center">
+                      Эмоциональная окраска
+                   </div>
+                   <div class="col-xl-2">
+                      <div class="row text-center">
+                          <div class="col-xl-12 positive">
+                              Положительно
+                          </div>
+                          <div class="col-xl-12 mt-1 neutral">
+                              Нейтрально
+                          </div>
+                          <div class="col-xl-12 mt-1 negative">
+                              Негативно
+                          </div>
+                      </div>
+                   </div>
+              </div>
+            </div>
+        </div>
+
+
+        {% for comment in vuz_1.comments_set.all %}
+            {% if comment.rait == 1 %}
+            <div class="row mt-4 neutral_block px-4 py-2">
+                <div class="col-xl-12">
+                    <div class="row">
+                            <div class="row">
+                                <div class="col-xl-12 fs-6 fw-bold mt-1">
+                                    {{ comment.text}}
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            {% elif comment.rait == 2 %}
+            <div class="row mt-4 positive_block px-4 py-2">
+                <div class="col-xl-12">
+                    <div class="row">
+                            <div class="row">
+                                <div class="col-xl-12 fs-6 fw-bold mt-1">
+                                    {{ comment.text}}
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            {% elif comment.rait == 0 %}
+            <div class="row mt-4 negative_block px-4 py-2">
+                <div class="col-xl-12">
+                    <div class="row">
+                            <div class="row">
+                                <div class="col-xl-12 fs-6 fw-bold mt-1">
+                                    {{ comment.text}}
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        {% include 'include/pagination.html' %}
+
+
+    </div>
+  </section>
+{% endblock %}

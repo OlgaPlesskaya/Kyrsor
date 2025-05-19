@@ -1,0 +1,109 @@
+{%extends 'main/base.html' %}
+
+{%load static%}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+
+{% endblock %}
+
+{% block title %}
+Курсор
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="container_1">
+        <div class="container col-12 mb-5">
+            <div class="row">
+                <div class="col-xl-5 col-lg-7 col-md-9 col-sm-9 fs-1 text-center mt-5 mx-auto">
+                    Проложи курс к своему ВУЗу
+                </div>
+            </div>
+
+                <form action="{% url 'search' %}" method="get">
+                    <div class="row mt-5 d-flex justify-content-center ">
+                            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-8 mx-0 ps-2 pt-3 pe-2 pb-2 search_place">
+                                <input class="search-form__input" type="search" placeholder="Начни вводить название..." name="q" required="">
+                            </div>
+                            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-3 mx-0 ps-2 pt-2 pe-2 pb-2 search_place_2">
+                                <button class="btn fs-6 fw-bold" type="submit">
+                                     <span>Найти</span>
+                                    </button>
+                            </div>
+                    </div>
+                 </form>
+            <div class="feed">
+<!--                  <h2>Event Feed</h2>-->
+                  <!--BUTTON TO FILTER EVENT FEED-->
+<!--                  <div style = "border-top: solid 1px #eee; width:100%;align-items: center;display: flex;flex-direction: column;">-->
+
+<!--                   <a href="{% if request.get_full_path == '/' %}?ordering=distance_from_metro-->
+<!--                   {% elif request.get_full_path == '/?ordering=distance_from_metro' %}/?ordering=distance_from_dormitory-->
+<!--                   {% elif request.get_full_path == '/?ordering=distance_from_dormitory' %}/?ordering=distance_from_metro-->
+<!--                   {% endif %}">-->
+<!--                       <button>Фильтр</button>-->
+<!--                   </a>-->
+                   <!--<button data-text-swap="Filter by Event Date"></button>-->
+<!--                  </div>-->
+
+                    <div class="chat">
+                    {% if vuz_1_list %}
+                    {% for vuz_1 in vuz_1_list %}
+                    <div class="row mt-5 d-flex justify-content-center">
+                        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-11 col-11 vuz p-3">
+                            <div class="row ps-xl-3">
+                                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4 mx-auto my-auto">
+                                    <img src="{{ vuz_1.logo.url}}" class="img-fluid" alt="">
+                                </div>
+                                <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
+                                    <div class="row">
+                                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 fs-5 fw-bolder med_space med_space_2">
+                                           <a href="{{vuz_1.get_absolute_url}}">
+                                               {{ vuz_1.name}}
+                                           </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-12 fs-6 fw-normal med_space med_space_2">
+                                           {{ vuz_1.short_name}}
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 fs-6 fw-normal med_space med_space_2">
+                                            <span class="fw-bolder"> {{ vuz_1.obr_pr}} </span>
+                                            образовательных программ
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 fs-6 fw-normal med_space med_space_2">
+                                           <span class="fw-bolder"> {{ vuz_1.pr_b}} </span>
+                                            средний проходной балл
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 fs-6 fw-normal med_space med_space_2">
+                                           <span class="fw-bolder"> {{ vuz_1.bm}} </span>
+                                            бюджетных мест
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                        {% include 'include/pagination.html' %}
+                    {% else %}
+                        <div class="row mt-5 d-flex justify-content-center">
+                            <div class="d-flex justify-content-center col-12">
+                            К сожалению, введенный Вами ВУЗ не найден
+                            </div>
+                        </div>
+                        
+                    {% endif %}
+
+                    </div>
+                </div>
+                    </div>
+              </div>
+
+
+
+{% endblock %}

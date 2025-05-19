@@ -1,0 +1,205 @@
+{%extends 'main/base_otz.html' %}
+
+{%load static%}
+{% load my_filters %}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style_otz.css' %}">
+
+{% endblock %}
+
+{% block title %}
+Сайт для абитуриентов
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container col-12 mb-5">
+        <div class="row">
+            <div class="col-xl-10 col-lg-10 col-md-11 col-sm-11 col-12 fs-3 text-center mt-3 mx-auto">
+                Расскажите подробнее о ВУЗе, Ваш отзыв сможет помочь не только нам составить достоверный рейтинг вузов, но и поможет абитуриентам сделать правильный выбор. Напишите 2-3 предложения по каждому разделу.
+            </div>
+        </div>
+        <form method="post" action="{% url 'otz'%}" class="row">
+        {% csrf_token %}
+            <div class="form-group col-12 col-md-12">
+            <label for="name">{{ labels.name }}</label>
+            <select class="form-control" id="name" name="name" required>
+                <option value="" selected disabled>Выберите вуз</option>
+                {% for vuz in vuz_list %}
+                <option value="{{ vuz.pk }}">{{ vuz.name }}</option>
+                {% endfor %}
+              </select>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="text_1">{{ labels.text }}</label>
+            <textarea class="form-control" id="text_1" name="text_1" rows="5" placeholder="Как бы Вы оценили обучение в Вашем ВУЗе?"></textarea>
+          </div>
+            <div class="form-group col-12">
+            <label for="text_2">{{ labels.text }}</label>
+            <textarea class="form-control" id="text_2" name="text_2" rows="5" placeholder="Как бы Вы оценили преподавательский состав?"></textarea>
+          </div>
+            <div class="form-group col-12">
+            <label for="text_3">{{ labels.text }}</label>
+            <textarea class="form-control" id="text_3" name="text_3" rows="5" placeholder="Как бы Вы оценили вашу студенческую жизнь в рамках Вашего вуза?"></textarea>
+          </div>
+            <div class="form-group col-12">
+            <label for="text_4">{{ labels.text }}</label>
+            <textarea class="form-control" id="text_4" name="text_4" rows="5" placeholder="Как Вы оцениваете расположение вашего вуза?"></textarea>
+          </div>
+            <div class="form-group col-12">
+            <label for="text_5">{{ labels.text }}</label>
+            <textarea class="form-control" id="text_5" name="text_5" rows="5" placeholder="Как бы Вы оценили общежитие?"></textarea>
+          </div>
+          <div class="col-12">
+            <div class="col-12 text-right">
+              <button type="submit" class="btn btn-primary mt-3" style="background-color: #AADDEC; color: black; box-shadow: 0rem 0.1rem 0.5rem;border-radius: 0.5rem; border: none;outline: none;">Добавить отзыв</button>
+            </div>
+          </div>
+
+
+        </form>
+
+
+
+<!--&lt;!&ndash;        <div class="row mt-3 mx-auto d-flex justify-content-center">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-xl-12 fs-6 fw-light">&ndash;&gt;-->
+<!--&lt;!&ndash;                        Факультет&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="row mt-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <input class="search-form__input" type="text" placeholder="Введите название факультета">&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--&lt;!&ndash;                <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-xl-12 fs-6 fw-light">&ndash;&gt;-->
+<!--&lt;!&ndash;                        Учёба&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                <div class="row mt-3 grow_grow">-->
+<!--                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place_2">-->
+<!--                        <textarea  class="search-form__input_2" type="text" placeholder="Как бы Вы оценили обучение на Вашем факультете?"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-12 fs-6 fw-light">-->
+<!--                        Преподаватели-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row mt-3 grow_grow">-->
+<!--                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place_3">-->
+<!--                        <textarea  class="search-form__input_3" type="text" placeholder="Как бы Вы оценили преподавательский состав вашей кафедры и факультета/института в целом?"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-12 fs-6 fw-light">-->
+<!--                        Отзыв-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+
+
+
+
+
+
+
+
+
+<!--                            <div class="input">-->
+<!--                                <textarea  class="search-form__input" type="text" placeholder="Напишите сюда что-нибудь"name="inputText"></textarea>-->
+<!--                                <button class="btn" type="submit">Отправить отзыв</button>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                        </div>-->
+
+<!--                        {% if request.method == 'POST' and not request.POST.inputText %}-->
+<!--                            <p class="error">Пожалуйста, введите текст для обработки.</p>-->
+<!--                        {% elif request.method == 'POST' %}-->
+<!--                            <div class="result-frame">-->
+<!--&lt;!&ndash;                                <h2>Отзыв добавлен в бд</h2>&ndash;&gt;-->
+<!--                                <h2>Результат анализа нейросети:</h2>-->
+<!--                                <p>Введенный текст: <strong>{{ request.POST.inputText }}</strong></p>-->
+<!--                                <p>Результат: {{ result }}</p>-->
+<!--                            </div>-->
+<!--                        {% endif %}-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+
+
+
+
+
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-12 fs-6 fw-light">-->
+<!--                        Расположение-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row mt-3 grow_grow">-->
+<!--                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place_5">-->
+<!--                        <textarea  class="search-form__input_5" type="text" placeholder="Как Вы оцениваете расположение вашего вуза?"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row mt-3 mx-auto d-flex justify-content-center">-->
+<!--            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10 col-10">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-12 fs-6 fw-light">-->
+<!--                        Общежитие-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row mt-3 grow_grow">-->
+<!--                    <div class="col-xl-12 col-lg-1w col-md-12 col-sm-12 col-12 mx-0 ps-3 pt-2 pe-3 pb-2 fs-5 search_place_5">-->
+<!--                        <textarea  class="search-form__input_5" type="text" placeholder="Как бы Вы оценили общежитие?"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+  $('textarea').each(function () {
+    // Do something if you want
+  }).on('input', function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+  });
+</script>
+  </section>
+{% endblock %}
+
+  
+
+  
+  
+
+  

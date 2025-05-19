@@ -1,0 +1,197 @@
+{%extends 'main/base.html' %}
+
+{%load static%}
+
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style_vuz_otz.css' %}">
+{% endblock %}
+
+{% block title %}
+Сайт для абитуриентов
+{% endblock %}
+
+
+
+{% block content %}
+  <section class="img_vuz">
+      <div class="container_1">
+    <div class="container col-12 mb-5">
+        <div class="row d-flex justify-content-center mt-5 fs-2 py-2 fw-bolder text-center clouds">
+            <div class="col-xl-9 col-lg-9 col-md-auto col-sm-auto col-auto my-auto">
+                 {{ vuz_1.name}}
+            </div>
+            <div class="col-xl-1 col-lg-1 col-md-auto col-sm-auto col-auto">
+               <a href="{{ vuz_1.url}}">
+                   <img src="{% static 'main/img/cursor_in_window.svg' %}" alt="Картинка">
+               </a>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center fs-4 mt-5">
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail" pk=vuz_1.id %}'>Информация о ВУЗе</a>
+            </button>
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail_1" pk=vuz_1.id %}'>Программы подготовки</a>
+            </button>
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail_2_1" pk=vuz_1.id %}'>Отзывы</a>
+            </button>
+        </div>
+        <div class="row d-flex justify-content-center mt-3">
+            <div class="col-xl-12 clouds_card py-4 px-5">
+               <div class="row">
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 text-center my-auto">
+                    Процент положительных отзывов
+                </div>
+
+                <div class="col-xl-1 col-lg-2 col-md-12 col-sm-12 col-12 my-auto text-center fw-bold">
+                    <span id="divided-count_2"></span>%
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12  text-center my-auto">
+                    Процент нейтральных отзывов
+                </div>
+                <div class="col-xl-1 col-lg-2 col-md-12 col-sm-12 col-12 my-auto text-center fw-bold">
+                    <span id="divided-count"></span>%
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 text-center my-auto">
+                    Процент негативных отзывов
+                </div>
+                <div class="col-xl-1 col-lg-2 col-md-12 col-sm-12 col-12 my-auto text-center fw-bold">
+                    <span id="divided-count_0"></span>%
+                </div>
+                <script>
+                      var two_rait_comments = {{two_rait_comments.count}};
+                      var comments = {{comments.count}} ;
+                      var dividedCount_1 = two_rait_comments / comments * 100;
+                      document.getElementById("divided-count_2").innerText = dividedCount_1.toFixed();
+                      var one_rait_comments = {{one_rait_comments.count}};
+                      var comments = {{comments.count}} ;
+
+                      var dividedCount_2 = one_rait_comments / comments * 100;
+                      document.getElementById("divided-count").innerText = dividedCount_2.toFixed();
+
+                      var dividedCount_3 = 100 - dividedCount_1.toFixed() - dividedCount_2.toFixed() ;
+                      document.getElementById("divided-count_0").innerText = dividedCount_3;
+                   </script>
+                {% with comments=vuz_1.comments_set.all %}
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 text-center my-auto">
+                    Количество отзывов
+                </div>
+                <div class="col-xl-1 col-lg-2 col-md-12 col-sm-12 col-12 my-auto text-center fw-bold">
+                    {{ comments.count}}
+                </div>
+
+                {% endwith %}
+             </div>    
+            </div>
+        </div>
+        <div class="row mt-3 clouds_card fs-6 fw-bold">
+            <div class="col-xl-12 px-4 py-3">
+              <div class="row">
+                   <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 my-auto">
+                       Дата добавления
+                   </div>
+                   <div class="col-xl-2 col-lg-2 col-md-auto col-sm-auto col-auto text-center by_new my-auto">
+                       По новизне
+                   </div>
+                   <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 text-start">
+                       Эмоциональная окраска
+                   </div>
+                   <div class="col-xl-2 col-lg-2 col-md-auto col-sm-auto col-auto text-center positive my-auto px-2">
+                       <form method="get">
+                            <input type="hidden" name="filter" value="2">
+                            <button type="submit" class="btn fs-6 fw-bold text-center">Положительно</button>
+                       </form>
+
+                   </div>
+                   <div class="col-xl-2 col-lg-2 col-md-auto col-sm-auto col-auto text-center neutral my-auto px-2">
+                       <form method="get">
+                            <input type="hidden" name="filter" value="1">
+                            <button type="submit " class="btn fs-6 fw-bold text-center">Нейтрально</button>
+                       </form>
+
+                   </div>
+                   <div class="col-xl-2 col-lg-2 col-md-auto col-sm-auto col-auto text-center negative my-auto px-2">
+                       <form method="get">
+                            <input type="hidden" name="filter" value="0">
+                            <button type="submit " class="btn fs-6 fw-bold text-center" >Негативно</button>
+                       </form>
+
+                   </div>
+              </div>
+            </div>
+        </div>
+        {% for comment in comments_1  %}
+
+                {% if comment.rait == 1 %}
+                    <div class="row mt-4 neutral_block px-4 py-2">
+                        <div class="col-xl-12">
+                            <div class="row">
+                                    <div class="row">
+                                        <div class="col-xl-12 fs-6 fw-bold mt-1">
+                                            {{ comment.text}}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                {% elif comment.rait == 2 %}
+                    <div class="row mt-4 positive_block px-4 py-2">
+                        <div class="col-xl-12">
+                            <div class="row">
+                                    <div class="row">
+                                        <div class="col-xl-12 fs-6 fw-bold mt-1">
+                                            {{ comment.text}}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                {% elif comment.rait == 0 %}
+                    <div class="row mt-4 negative_block px-4 py-2">
+                        <div class="col-xl-12">
+                            <div class="row">
+                                    <div class="row">
+                                        <div class="col-xl-12 fs-6 fw-bold mt-1">
+                                            {{ comment.text}}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+
+
+        {% endfor %}
+
+         <ul class="pagination mt-3">
+<!--        {% if comments_1.has_previous %}-->
+<!--             <li class="pagination__item">-->
+<!--                <a href="?page={{ comments_1.previous_page_number }}{% if filter_value %}&filter={{ filter_value }}{% endif %}">&laquo; Предыдущая</a>-->
+<!--            </li>-->
+<!--        {% endif %}-->
+
+       {% for num in comments_1.paginator.page_range %}
+           {% if num == comments_1.number %}
+               <span class="current-page">{{ num }}</span>
+           {% elif num > comments_1.number|add:'-3' and num < comments_1.number|add:'3' %}
+               <a href="?page={{ num }}{% if filter_value %}&filter={{ filter_value }}{% endif %}">{{ num }}</a>
+           {% endif %}
+       {% endfor %}
+
+<!--       {% if comments_1.has_next %}-->
+<!--           <a href="?page={{ comments_1.next_page_number }}{% if filter_value %}&filter={{ filter_value }}{% endif %}">Следующая &raquo;</a>-->
+<!--       {% endif %}-->
+        </ul>
+    </div>
+          </div>
+  </section>
+{% endblock %}
+
+  

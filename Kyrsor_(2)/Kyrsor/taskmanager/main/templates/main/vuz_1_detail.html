@@ -1,0 +1,241 @@
+{%extends 'main/base.html' %}
+
+{%load static%}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style_vuz.css' %}">
+{% endblock %}
+
+{% block title %}
+Курсор
+{% endblock %}
+
+{% block content %}
+<div class="container_1">
+    <div class="container col-12 mb-5">
+        <div class="row d-flex justify-content-center mt-5 fs-2 py-2 fw-bolder text-center clouds">
+            <div class="col-xl-9 col-lg-9 col-md-auto col-sm-auto col-auto my-auto">
+                 {{ vuz_1.name}}
+            </div>
+            <div class="col-xl-1 col-lg-1 col-md-auto col-sm-auto col-auto">
+               <a href="{{ vuz_1.url}}">
+                   <img src= "{% static 'main/img/cursor_in_window.svg' %}" alt="Картинка">
+               </a>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center fs-4 mt-5">
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail" pk=vuz_1.id %}'>Информация о ВУЗе</a>
+            </button>
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail_1" pk=vuz_1.id %}'>Программы подготовки</a>
+            </button>
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail_2_1" pk=vuz_1.id %}'>Отзывы</a>
+            </button>
+        </div>
+        <div class="row d-flex justify-content-center mt-3">
+            <div class="col-xl-12 clouds_card p-4 med_space_pad">
+               <div class="row">
+                <div class="col-xl-3 col-lg-6 col-md-8 col-sm-6 col-7 med_space_font">
+                  <div class="col-xl-12">
+                       <img src="{% static 'main/img/image25.svg' %}" alt="Картинка">  Направлений подготовки
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image26.svg' %}" alt="Картинка">  Образовательных программ
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image27.svg' %}" alt="Картинка">  Бюджетных мест
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image28.svg' %}" alt="Картинка">  Средний проходной балл
+                   </div>
+                </div>
+
+                <div class="col-xl-1 col-lg-auto col-md-4 col-sm-4 col-5 fw-bold fs-6 med_space_lh_768 med_space_lh_576">
+                    {% with prog=vuz_1.programms_set.all %}
+                  <div class="col-xl-12 line_height med_space_font_2 ">
+                       {{ prog.count}}
+                   </div>
+                    {% endwith %}
+                   <div class="col-xl-12 mt-3 line_height med_space_font_2  med_space_lh_768 med_space_lh_576 med_space_margin_obrball med_space_margin_obrpr">
+                       {{ vuz_1.obr_pr}}
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_font_2 med_space_margin_budget_2 med_space_margin_srball">
+                       {{ vuz_1.bm}}
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_font_2 med_space_margin_srball_2 ">
+                       {{ vuz_1.pr_b}}
+                   </div>
+                </div>
+                <div class="col-xl-1 col-lg-auto">
+
+                </div>
+
+                <div class="col-xl-auto col-lg-6 col-md-8 col-sm-6 col-7 med_space med_space_font ">
+                   <div class="col-xl-12">
+                       <img src="{% static 'main/img/image30.svg' %}" alt="Картинка"> Среднее растояние между корпусами
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image24.svg' %}" alt="Картинка"> Растояние от главного корпуса до метро
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image31.svg' %}" alt="Картинка"> Ближайшая станция метро для главного корпуса
+                   </div>
+                   <div class="col-xl-12 mt-3 med_space_lh_992 med_space_lh_768_obshaga">
+                       <img src="{% static 'main/img/image32.svg' %}" alt="Картинка"> Максимальное растояние от главного корпуса до общежития
+                   </div>
+                </div>
+                <div class="col-xl-auto col-lg-auto col-md-4 col-sm-4 col-5  fw-bold fs-6 med_space med_space_lh_768">
+                  <div class="col-xl-12 line_height med_space_lh_3 med_space_font_2 ">
+                       {{ vuz_1.distance_between_buildings}}
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_lh_2 med_space_font_2 med_space_lh_768 med_space_margin_gl-metro">
+                       {{vuz_1.distance_to_metro}} км
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height  med_space_font_2 med_space_lh_768_metro med_space_margin_metro">
+                       {{vuz_1.name_metro}}
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_font_2 med_space_lh_768_obshaga med_space_lh_576_obshaga med_space_margin_obshaga">
+                       {{vuz_1.distance_from_dormitory}}
+                   </div>
+                </div>
+             </div>
+            </div>
+        </div>
+
+
+        <div class="row d-flex justify-content-center mt-3">
+
+            <div class="col-xl-10 p-3 clouds">
+                <div style="height: 400px; width: 100%; overflow: hidden;">
+                  <div id="map" style="height: 100%;"></div>
+                </div>
+                   <script src="https://api-maps.yandex.ru/2.1/?apikey=1378cdde-b790-4327-9442-39ce536a4341&lang=ru_RU" type="text/javascript"></script>
+
+                    <script type="text/javascript">
+                        ymaps.ready(function () {
+                          // Создаем карту и метки
+                          var myMap = new ymaps.Map("map", {
+                            center: [{{ vuz_1.latitude }}, {{ vuz_1.longitude }}],
+                            zoom: 16,
+                            controls: []
+                          }, {
+                            suppressMapOpenBlock: true,
+                            restrictMapArea: [[55.5, 37.2], [56.0, 38.0]]
+                          });
+
+
+
+
+                            var placemarks_1 = [];
+                            {% for point in dom %}
+                                placemarks_1.push(new ymaps.Placemark(
+                                    [{{point.latitude}}, {{point.longitude}}],
+                                    { iconCaption: 'Общежитие' },
+                                    { preset: 'islands#blueHomeIcon', iconColor: '#177bc9' }
+                                ));
+                            {% endfor %}
+
+                            // Создаем объект Clusterer_1 и добавляем его на карту
+                            var clusterer_1 = new ymaps.Clusterer({
+                                preset: 'islands#darkBlueClusterIcons',
+                                iconColor: '#0095b6',
+                                /**
+                                 * Ставим true, если хотим кластеризовать только точки с одинаковыми координатами.
+                                 */
+                                groupByCoordinates: false,
+                                /**
+                                 * Опции кластеров указываем в кластеризаторе с префиксом "cluster".
+                                 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ClusterPlacemark.xml
+                                 */
+                                clusterDisableClickZoom: true,
+                                clusterHideIconOnBalloonOpen: false,
+                                geoObjectHideIconOnBalloonOpen: false,
+                                clusterBalloonContentLayout: null,
+                                gridSize: 50
+                            });
+                            clusterer_1.add(placemarks_1);
+                            myMap.geoObjects.add(clusterer_1);
+
+
+
+
+
+                            var placemarks = [];
+                            {% for point in buil %}
+                                placemarks.push(new ymaps.Placemark(
+                                    [{{point.latitude}}, {{point.longitude}}],
+                                    { iconCaption: 'Корпус ВУЗа' },
+                                    { preset: 'islands#blueEducationIcon', iconColor: '#82cdff' }
+                                ));
+                            {% endfor %}
+
+                            // Создаем объект Clusterer и добавляем его на карту
+                            var clusterer = new ymaps.Clusterer({
+                                preset: 'islands#lightBlueClusterIcons',
+                                groupByCoordinates: false,
+                                clusterDisableClickZoom: true,
+                                clusterHideIconOnBalloonOpen: false,
+                                geoObjectHideIconOnBalloonOpen: false,
+                                clusterBalloonContentLayout: null,
+                                gridSize: 50
+                            });
+                            clusterer.add(placemarks);
+                            myMap.geoObjects.add(clusterer);
+
+
+
+                            var myPlacemark_1 = new ymaps.Placemark(
+                                [{{ vuz_1.metro_latitude }}, {{ vuz_1.metro_longitude }}],
+                                {
+                                    iconCaption: '{{ vuz_1.metro_name }}'
+                                },
+                                {
+                                    preset: 'islands#blueRapidTransitIcon',
+                                    iconColor: '#D85242'
+                                }
+
+                            );
+
+                            myMap.geoObjects.add(myPlacemark_1);
+
+
+                            var myPlacemark = new ymaps.Placemark([ {{vuz_1.latitude}} ,  {{vuz_1.longitude}} ],
+                          {
+                            iconCaption: ' {{vuz_1.short_name}}'
+                          },
+                           {
+                                    preset: 'islands#blueEducationIcon',
+                                    iconColor: '#F4B752'
+                           }
+
+                           );
+                          myMap.geoObjects.add(myPlacemark);
+
+
+
+<!--                          myMap.behaviors.disable('scrollZoom');-->
+<!--                          myMap.behaviors.disable('drag');-->
+
+                          // Добавляем обработчик события click на кнопку
+                          document.getElementById("map-button").addEventListener("click", function() {
+                            // Делаем карту динамической
+                            myMap.behaviors.enable('multiTouch');
+                            myMap.behaviors.enable('scrollZoom');
+                            myMap.behaviors.enable('drag');
+                          });
+                        });
+
+
+
+                    </script>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

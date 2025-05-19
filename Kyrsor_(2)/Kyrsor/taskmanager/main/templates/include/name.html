@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4fba1eccde234879c80a7afeae1ec8c5 {
+                    position: relative;
+                    width: 80%;
+                    height: 80%;
+                    top: 25%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0.7);
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4fba1eccde234879c80a7afeae1ec8c5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4fba1eccde234879c80a7afeae1ec8c5 = L.map(
+                "map_4fba1eccde234879c80a7afeae1ec8c5",
+                {
+                    center: [55.714049, 37.811651],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 17,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bccbe95329a5ab5353c433682ad9cbfb = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_bccbe95329a5ab5353c433682ad9cbfb.addTo(map_4fba1eccde234879c80a7afeae1ec8c5);
+        
+    
+            var marker_16436572981323d3af218bae58ef4cd7 = L.marker(
+                [55.714049, 37.811651],
+                {}
+            ).addTo(map_4fba1eccde234879c80a7afeae1ec8c5);
+        
+    
+        var popup_89c0021dc4b2cf0e99ee1de40abdf8aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a0ab0032d1088471df653814131cc43 = $(`<div id="html_5a0ab0032d1088471df653814131cc43" style="width: 100.0%; height: 100.0%;">Гуу</div>`)[0];
+                popup_89c0021dc4b2cf0e99ee1de40abdf8aa.setContent(html_5a0ab0032d1088471df653814131cc43);
+            
+        
+
+        marker_16436572981323d3af218bae58ef4cd7.bindPopup(popup_89c0021dc4b2cf0e99ee1de40abdf8aa)
+        ;
+
+        
+    
+    
+            marker_16436572981323d3af218bae58ef4cd7.bindTooltip(
+                `<div>
+                     Государственный университет управления
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2b859b84d78a976e9c5762d67695312d = L.marker(
+                [55.71555556, 37.81805556],
+                {}
+            ).addTo(map_4fba1eccde234879c80a7afeae1ec8c5);
+        
+    
+        var popup_ff778b5a525edb85f696b4fe04f39b99 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f40a45cb30811b3936a7e2d904bcde3a = $(`<div id="html_f40a45cb30811b3936a7e2d904bcde3a" style="width: 100.0%; height: 100.0%;">Ближайшее метро</div>`)[0];
+                popup_ff778b5a525edb85f696b4fe04f39b99.setContent(html_f40a45cb30811b3936a7e2d904bcde3a);
+            
+        
+
+        marker_2b859b84d78a976e9c5762d67695312d.bindPopup(popup_ff778b5a525edb85f696b4fe04f39b99)
+        ;
+
+        
+    
+    
+            marker_2b859b84d78a976e9c5762d67695312d.bindTooltip(
+                `<div>
+                     Ближайшее метро
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

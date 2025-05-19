@@ -1,0 +1,109 @@
+{%extends 'main/base.html' %}
+
+{%load static%}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style_vuz.css' %}">
+{% endblock %}
+
+{% block title %}
+Сайт для абитуриентов
+{% endblock %}
+
+{% block content %}
+<section class="img_vuz">
+    <div class="container col-12 mb-5">
+        <div class="row d-flex justify-content-center mt-5 fs-2 py-2 fw-bolder text-center clouds">
+            <div class="col-xl-9 col-lg-9 col-md-auto col-sm-auto col-auto my-auto">
+                 {{ vuz_1.name}}
+            </div>
+            <div class="col-xl-1 col-lg-1 col-md-auto col-sm-auto col-auto">
+               <a href="{{ vuz_1.url}}">
+                   <img src= "{% static 'main/img/cursor_in_window.svg' %}" alt="Картинка">
+               </a>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center fs-4 mt-5">
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail" pk=vuz_1.id %}'>Информация о ВУЗе</a>
+            </button>
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_1_detail_1" pk=vuz_1.id %}'>Программы подготовки</a>
+            </button>
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href="vuz_otz_bootstrap.html">Отзывы</a>
+            </button>
+        </div>
+        <div class="row d-flex justify-content-center mt-3">
+            <div class="col-xl-12 clouds_card p-4 med_space_pad">
+               <div class="row">
+                <div class="col-xl-4 col-lg-auto col-md-8 col-sm-10 col-9 med_space_font">
+                  <div class="col-xl-12">
+                       <img src="{% static 'main/img/image25.svg' %}" alt="Картинка">  Направлений подготовки
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image26.svg' %}" alt="Картинка">  Образовательных программ
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image27.svg' %}" alt="Картинка">  Бюджетных мест
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image28.svg' %}" alt="Картинка">  Средний проходной балл
+                   </div>
+                </div>
+                <div class="col-xl-1 col-lg-1 col-md-auto col-sm-1 col-auto fw-bold fs-5 ">
+                  <div class="col-xl-12 line_height med_space_font_2">
+                       XXX
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_font_2">
+                       {{ vuz_1.obr_pr}}
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_font_2">
+                       {{ vuz_1.bm}}
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_font_2">
+                       {{ vuz_1.pr_b}}
+                   </div>
+                </div>
+                <div class="col-xl-1 col-lg-auto col-md-auto col-sm-auto col-auto">
+
+                </div>
+                <div class="col-xl-5 col-lg-auto col-md-8 col-sm-10 col-9 med_space med_space_font">
+                   <div class="col-xl-12">
+                       <img src="{% static 'main/img/image30.svg' %}" alt="Картинка"> Среднее растояние между корпусами
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image24.svg' %}" alt="Картинка"> Растояние от главного корпуса до метро
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image31.svg' %}" alt="Картинка"> Ближайшая станция метро для главного корпуса
+                   </div>
+                   <div class="col-xl-12 mt-3">
+                       <img src="{% static 'main/img/image32.svg' %}" alt="Картинка"> Растояние от главного корпуса до общежития
+                   </div>
+                </div>
+                <div class="col-xl-1 col-lg-1 col-md-auto col-sm-1 col-auto fw-bold fs-5 med_space">
+                  <div class="col-xl-12 line_height med_space_lh_3 med_space_font_2">
+                       XXX
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_lh_2 med_space_font_2">
+                       XXX
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_lh med_space_font_2">
+                       XXX
+                   </div>
+                   <div class="col-xl-12 mt-3 line_height med_space_lh med_space_font_2">
+                       XXX
+                   </div>
+                </div>
+             </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-3">
+            <div class="col-xl-10 p-3 clouds">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac0bfc07124a28bbac684a5a5dfbcb75d4693271360aaf57743b0ba2a1801ba66&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+        </div>
+    </div>
+  </section>
+{% endblock %}

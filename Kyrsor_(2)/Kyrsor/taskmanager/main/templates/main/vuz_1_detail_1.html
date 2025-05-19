@@ -1,0 +1,72 @@
+{%extends 'main/base.html' %}
+
+{%load static%}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style_vuz_progs.css' %}">
+{% endblock %}
+
+{% block title %}
+Курсор
+{% endblock %}
+
+{% block content %}
+  
+<div class="container_1">
+    <div class="container col-12 mb-5">
+        <div class="row d-flex justify-content-center mt-5 fs-2 py-2 fw-bolder text-center clouds">
+            <div class="col-xl-9 col-lg-9 col-md-auto col-sm-auto col-auto my-auto">
+                 {{ vuz_1.name}}
+            </div>
+            <div class="col-xl-1 col-lg-1 col-md-auto col-sm-auto col-auto">
+               <a href="{{ vuz_1.url}}">
+                   <img src="{% static 'main/img/cursor_in_window.svg' %}" alt="Картинка">
+               </a>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center fs-4 mt-5">
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail" pk=vuz_1.id %}'>Информация о ВУЗе</a>
+            </button>
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail_1" pk=vuz_1.id %}'>Программы подготовки</a>
+            </button>
+            <button class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 clouds_card button_clouds fw-bold">
+                <a class="href_block" href='{% url "vuz_detail_2_1" pk=vuz_1.id %}'>Отзывы</a>
+            </button>
+        </div>
+        {% for p in prog %}
+        <div class="row mt-3 cards p-4">
+           <div class="col-xl-12">
+             <div class="row">
+                <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 col-12 med_space">
+                    <div class="col-12 med_space fw-bold fs-5">
+                        {{ p.programm }}
+                    </div>
+                    <div class="col-12 med_space">
+                        {{ p.сod_programm }}
+                    </div>
+                </div>
+
+                 <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 text-center med_space">
+                    Проходной балл на очную форму обучения в 2023 году<br> <span class="fw-bold fs-5">{{ p.passing_score }} </span>
+                </div>
+                 <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 text-center med_space">
+                    Количество бюджетных мест на очную форму обучения в 2024 году<br> <span class="fw-bold fs-5">{{ p.budget_places }} </span>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 text-center med_space">
+                    Минимальная стоимость обучения на очной форме (руб.)<br> <span class="fw-bold fs-5">{{ p.cost_of_education }}</span>
+                </div>
+
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+    </div>
+
+{% endblock %}
+
+
+  

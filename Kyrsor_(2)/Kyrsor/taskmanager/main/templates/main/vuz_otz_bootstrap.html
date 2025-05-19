@@ -1,0 +1,286 @@
+{%extends 'main/base.html' %}
+
+{%load static%}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'main/css/style_vuz.css' %}">
+{% endblock %}
+
+{% block title %}
+Сайт для абитуриентов
+{% endblock %}
+
+{% block content %}
+  
+  <section class="img_vuz">
+    <div class="container col-12 mb-5">
+        <div class="row d-flex justify-content-center mt-5 fs-2 fw-bolder text-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 clouds py-2">
+                 {{ vuz_1.name}}
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center fs-4 mt-5">
+            <button class="col-xl-3 clouds button_clouds fw-bold">
+                <a class="href_block" href="vuz_bootstrap.html">Информация о ВУЗе</a>
+            </button>
+            <button class="col-xl-3 clouds button_clouds fw-bold">
+                <a class="href_block" href="vuz_otz_bootstrap.html">Отзывы</a>
+            </button>
+            <button class="col-xl-3 clouds button_clouds fw-bold">
+                smth
+            </button>
+            <button class="col-xl-3 clouds button_clouds fw-bold">
+                smth
+            </button>
+        </div>
+        <div class="row spacing_vuz clouds fs-5 fw-bold">
+            <div class="col-xl-12 px-4 py-3">
+              <div class="row">
+                   <div class="col-xl-2 fs-5">
+                       Ключевые слова
+                   </div>
+                   <div class="col-xl-4">
+                        <div class="row text-center">
+                            <div class="col-xl-3 px-1 study">
+                                Учёба
+                            </div>
+                            <div class="col-xl-8  stud_life ms-1">
+                                Студенческая жизнь
+                            </div>
+                            <div class="col-xl-6 px-1 mt-1 prepod">
+                                Преподаватели
+                            </div>
+                            <div class="col-xl-5 px-1 mt-1 ms-1 living">
+                                Общежитие
+                            </div>
+                            <div class="col-xl-6 px-1 mt-1 location">
+                                Расположение
+                            </div>
+                        </div>
+                   </div>
+                   <div class="col-xl-2 ">
+                       <div class="row text-center">
+                           <div class="col-xl-12 px-1">
+                               Дата добавления
+                           </div>
+                           <div class="col-xl-12 px-1 mt-1 by_new">
+                               По новизне
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-xl-2 text-center">
+                      Эмоциональная окраска
+                   </div>
+                   <div class="col-xl-2">
+                      <div class="row text-center">
+                          <div class="col-xl-12 positive">
+                              Положительно
+                          </div>
+                          <div class="col-xl-12 mt-1 neutral">
+                              Нейтрально
+                          </div>
+                          <div class="col-xl-12 mt-1 negative">
+                              Негативно
+                          </div>
+                      </div>
+                   </div>
+              </div>
+            </div>
+        </div>
+        <div class="row mt-4 positive_block px-4 py-2">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-10 ">
+                        <div class="row text-center d-flex justify-content-between fs-6">
+                            <div class="col-xl-2 px-1 study">
+                                Учёба
+                            </div>
+                            <div class="col-xl-3  stud_life ms-1">
+                                Студенческая жизнь
+                            </div>
+                            <div class="col-xl-2 px-1 prepod">
+                                Преподаватели
+                            </div>
+                            <div class="col-xl-2 px-1 ms-1 living">
+                                Общежитие
+                            </div>
+                            <div class="col-xl-2 px-1 location">
+                                Расположение
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 text-end fs-5 fw-bolder">
+                        X/10
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 fs-6 fw-bold mt-1">
+                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-xl-12 fs-6 fw-light text-end mt-1">
+                       XX-XX-XXXX
+                   </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 neutral_block px-4 py-2">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-10 ">
+                        <div class="row text-center d-flex justify-content-between fs-6">
+                            <div class="col-xl-2 px-1 study">
+                                Учёба
+                            </div>
+                            <div class="col-xl-3  stud_life ms-1">
+                                Студенческая жизнь
+                            </div>
+                            <div class="col-xl-2 px-1 prepod">
+                                Преподаватели
+                            </div>
+                            <div class="col-xl-2 px-1 ms-1 living">
+                                Общежитие
+                            </div>
+                            <div class="col-xl-2 px-1 location">
+                                Расположение
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 text-end fs-5 fw-bolder">
+                        X/10
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 fs-6 fw-bold mt-1">
+                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-xl-12 fs-6 fw-light text-end mt-1">
+                       XX-XX-XXXX
+                   </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 negative_block px-4 py-2">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-10 ">
+                        <div class="row text-center d-flex justify-content-between fs-6">
+                            <div class="col-xl-2 px-1 study">
+                                Учёба
+                            </div>
+                            <div class="col-xl-3  stud_life ms-1">
+                                Студенческая жизнь
+                            </div>
+                            <div class="col-xl-2 px-1 prepod">
+                                Преподаватели
+                            </div>
+                            <div class="col-xl-2 px-1 ms-1 living">
+                                Общежитие
+                            </div>
+                            <div class="col-xl-2 px-1 location">
+                                Расположение
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 text-end fs-5 fw-bolder">
+                        X/10
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 fs-6 fw-bold mt-1">
+                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-xl-12 fs-6 fw-light text-end mt-1">
+                       XX-XX-XXXX
+                   </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 positive_block px-4 py-2">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-10 ">
+                        <div class="row text-center d-flex justify-content-between fs-6">
+                            <div class="col-xl-2 px-1 study">
+                                Учёба
+                            </div>
+                            <div class="col-xl-3  stud_life ms-1">
+                                Студенческая жизнь
+                            </div>
+                            <div class="col-xl-2 px-1 prepod">
+                                Преподаватели
+                            </div>
+                            <div class="col-xl-2 px-1 ms-1 living">
+                                Общежитие
+                            </div>
+                            <div class="col-xl-2 px-1 location">
+                                Расположение
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 text-end fs-5 fw-bolder">
+                        X/10
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 fs-6 fw-bold mt-1">
+                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-xl-12 fs-6 fw-light text-end mt-1">
+                       XX-XX-XXXX
+                   </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 neutral_block px-4 py-2">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-10 ">
+                        <div class="row text-center d-flex justify-content-between fs-6">
+                            <div class="col-xl-2 px-1 study">
+                                Учёба
+                            </div>
+                            <div class="col-xl-3  stud_life ms-1">
+                                Студенческая жизнь
+                            </div>
+                            <div class="col-xl-2 px-1 prepod">
+                                Преподаватели
+                            </div>
+                            <div class="col-xl-2 px-1 ms-1 living">
+                                Общежитие
+                            </div>
+                            <div class="col-xl-2 px-1 location">
+                                Расположение
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 text-end fs-5 fw-bolder">
+                        X/10
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 fs-6 fw-bold mt-1">
+                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-xl-12 fs-6 fw-light text-end mt-1">
+                       XX-XX-XXXX
+                   </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  
+  <script src="js/bootstrap.bundle.min.js"></script>
+{% endblock %}
+  
