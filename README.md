@@ -80,5 +80,3 @@ python manage.py runserver
 ```
 
 --- 
-
-Готово! Сохраните этот текст как `README.md` в корень проекта.
