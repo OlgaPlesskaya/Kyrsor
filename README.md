@@ -18,16 +18,17 @@
 
 ## 📸 Скриншоты
 
-| Главная страница | Информация о ВУЗе |
-|------------------|--------------------|
-| ![image](https://github.com/user-attachments/assets/636b523f-8e1e-4777-8335-379673e5e8a1)
- | ![image](https://github.com/user-attachments/assets/8979a294-b36e-48c9-b220-19bd084c9295)
- |
+**Главная страница**
 
-| Отзывы | Форма добавления отзыва |
-|--------|-------------------------|
-| ![Отзывы](путь_к_скриншоту.png) | ![image](https://github.com/user-attachments/assets/435f0626-8c2e-4bb6-ab63-d2c90fd0d021)
- |
+![image](https://github.com/user-attachments/assets/636b523f-8e1e-4777-8335-379673e5e8a1)
+
+**Информация о ВУЗе**
+
+![image](https://github.com/user-attachments/assets/8979a294-b36e-48c9-b220-19bd084c9295)
+
+**Форма добавления отзыва**
+![image](https://github.com/user-attachments/assets/435f0626-8c2e-4bb6-ab63-d2c90fd0d021)
+
 
 ---
 
